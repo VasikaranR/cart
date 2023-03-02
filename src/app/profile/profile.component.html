@@ -1,0 +1,13 @@
+ <div>
+    <div *ngFor="let user of profileItems">
+     <div class="profile">
+        <div class="inner-profile">
+         <div class="details"> User Email : {{user.email}} </div><br>
+         <div class="details"> User Name  : {{user.firstName}}{{user.lastName}}</div><br>
+         <div class="details">  User ID   : {{user.id}}</div><br>
+         <button type="submit" class="btn btn-primary pl-3 mr-4 align-left">edit</button>
+       </div>
+
+     </div>
+   </div>
+</div> 

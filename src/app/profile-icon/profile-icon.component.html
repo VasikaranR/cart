@@ -1,0 +1,14 @@
+
+<div>
+    <div class="profile">
+ <div style="text-align: right;">
+    <span style="padding:10px; background-color:red"  aria-hidden="true">&times;</span>
+ </div>
+   <hr>
+    <div>Name  : {{name}}</div>&nbsp;
+    <div>Email : {{email}}</div>&nbsp;
+    <button type="submit" class="btn btn-danger"  (click)="logout()">logout</button>&nbsp;
+    <button type="submit" class="btn btn-primary" [routerLink]="['/profile']">Go To profile</button>
+
+  </div>
+</div>

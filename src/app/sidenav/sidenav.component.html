@@ -1,0 +1,21 @@
+<div class="sidebar-opener" (click)="sidebarShow = !sidebarShow">
+  x
+</div>
+<div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+  <div
+      class="sidebar-close"
+      (click)="sidebarShow = !sidebarShow"
+  >
+  X
+  </div>
+    <div class="sidebar-content" >
+      <h2></h2>
+        <div class="item" *ngFor="let item of data" (click)="redirectTo(item.url)">
+          <span *ngIf="item.role=='user' && role=='user'">{{item.text}}</span>
+      </div>
+        <div class="item" *ngFor="let item of data2" (click)="redirectTo(item.url)"> 
+        <span *ngIf="item.role=='admin'&& role=='admin'">{{item.text}}</span>
+      </div>
+        
+    </div>
+</div>

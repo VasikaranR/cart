@@ -1,0 +1,17 @@
+<div class="content">
+    <h4 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">You Would Also Like</h4>
+    <ng-container *ngFor="let item of recommendList;let i = index">
+      
+        <img  *ngIf="i === currentSlide" [src]="item.image"   alt="alter"  class="slide">
+       
+        <div *ngIf="i === currentSlide" style="height: 250px; width:400px; background-color: #F7F5F2;">{{item.name | uppercase}}</div>
+
+    </ng-container>
+    <button class="control prev" (click)="onPreviousClick()">
+        <span class="arrow left">{{'previous' |uppercase }}</span>
+      </button>
+     <button class="control next" (click)="onNextClick()">
+            <span class="arrow right">{{'next' |uppercase }}</span>
+        </button>
+   
+</div>

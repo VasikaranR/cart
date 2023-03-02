@@ -1,0 +1,29 @@
+.slide{
+    margin-top: 90px;
+    margin-left: 35px;
+    position: absolute;
+    width: 300px;
+
+    .item1{
+        margin-top: 100px;
+    }
+    
+}
+.content{
+    display: block;
+    border: 1px;
+    box-shadow: 2px;
+}
+
+.control{
+    background-color: #F7F5F2;
+    padding: 1%;
+    margin-top: 32px;
+    width: 200px;
+    height: 70px;
+    border: 0;
+}
+
+.control:hover{
+    background-color: #DFDFDE;
+}

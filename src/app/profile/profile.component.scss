@@ -1,0 +1,38 @@
+.profile{
+    background-color: black;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15%;
+    padding-left: 400px;
+    margin-left: 200px;
+    margin: 0%;
+    border-radius: 3px;
+    box-shadow:0 5px 15px rgba(0,0,0, 0.2); 
+    
+}
+.inner-profile{
+    background-color: white;
+    padding: 10%;
+    padding-right: 50px;
+    margin-left: 400px;
+    margin-right: 300px;
+}
+
+
+.details{
+   background-color: white;
+   text-align: left;
+   text-decoration: solid;
+   text-shadow: 2%;
+
+}
+
+.product-list{
+    position: fixed;
+    right: 1em;
+    top: 73px;
+    width: 350px;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    box-shadow: 0 5px 15px rgba(0,0,0, 0.2);
+}

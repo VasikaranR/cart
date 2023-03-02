@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h2 style="background-color: #F5FFC9; text-align: center;">My Orders</h2>
+
+    <div class="row product-list" style="margin: 1em 0;">
+
+      <div class="col-sm-12 col-md-6 col-lg-4 product-list__item" *ngFor="let product of products; let i = index;">
+        <div class="card mb-4 shadow-sm pd-5">
+          <div class="product-list__image">
+           <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+          </div>
+
+          <div class="card-body">
+            <h4>{{product.name}}</h4>
+            <p class="card-text">{{product.description}}</p>
+            <div class="text-center">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>  

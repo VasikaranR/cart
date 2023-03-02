@@ -1,0 +1,22 @@
+<app-recommend ></app-recommend>
+
+<div  class="whole"  *ngFor=" let item of items">
+    <div class="inner">
+    <div style="width: 100%; background-color: #DFDFDE; text-align: center; padding: 10px;">PRODUCT DETAILS </div>
+    <img  class="image" src="{{item.image}}" style="align-items: center; " alt="product image">
+    <div class="items">
+        <div id="name">
+            Name : {{item.name}}
+        </div>
+    </div>
+    <li class="items">
+          Description : {{item.description}}
+    </li>
+    <div class="items">
+         Price: {{item.price |currency :'INR'}}
+    </div>
+    <div class="button">
+        <button class="btn btn-primary" style="text-align: center;" (click)="redirect()"> Back </button>
+    </div>
+   </div>
+</div>

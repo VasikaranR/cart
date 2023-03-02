@@ -1,0 +1,19 @@
+<div>
+   <ul class="view">
+        <li *ngFor="let item of cartlist">
+          <img class="card-img-top" src="{{item.image}}" alt="Card image cap"><br>
+           <span> {{item.name}} </span>
+           <br>
+          <span>{{item.price  | currency:'INR'}}</span>
+          <span aria-hidden="true" >&times;</span>
+        <button type="button" (click)="removeItem(item.id,item.price)" class="close btn btn-danger" aria-label="Remove Item" >
+          <span aria-hidden="true" >&times;</span>
+        </button>
+      </li>
+      <div><h2> Total Amount {{total | currency:'INR'}}</h2></div>
+     <button class="btn btn-danger"(click)="mapToMyOrders()">Checkout</button>
+    </ul>
+    
+
+
+</div>
