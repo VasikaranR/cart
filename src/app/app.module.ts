@@ -15,7 +15,6 @@ import { AddProductsComponent } from './add-products/add-products.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
-import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './register/register.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ViewcartComponent } from './viewcart/viewcart.component';
@@ -23,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { MyordersComponent } from './myorders/myorders.component';
 import { DescriptionComponent } from './description/description.component';
 import { RecommendComponent } from './recommend/recommend.component';
+import { EditItemsComponent } from './edit-items/edit-items.component';
 
 
 @NgModule({
@@ -42,7 +42,8 @@ import { RecommendComponent } from './recommend/recommend.component';
     ViewcartComponent,
     MyordersComponent,
     DescriptionComponent,
-    RecommendComponent
+    RecommendComponent,
+    EditItemsComponent
     
   ],
   imports: [

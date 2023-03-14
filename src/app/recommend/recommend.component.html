@@ -5,6 +5,8 @@
         <img  *ngIf="i === currentSlide" [src]="item.image"   alt="alter"  class="slide">
        
         <div *ngIf="i === currentSlide" style="height: 250px; width:400px; background-color: #F7F5F2;">{{item.name | uppercase}}</div>
+        <div *ngIf="i === currentSlide" style=" padding-top: 35px;height: 100px; width:400px; background-color: #F7F5F2;text-align: center;">{{item.price | currency:'INR'}}</div>
+
 
     </ng-container>
     <button class="control prev" (click)="onPreviousClick()">

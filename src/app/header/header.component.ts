@@ -11,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   
   public sidebarShow: boolean = false;
-  public cartProductCount:number=0;  
+  public cartProductCount:number=0; 
   public cartItems: any;
   public show:boolean=false;
 
@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   public ngOnInit(): void {
     this.cartService.getProducts().subscribe(data => {
       this.cartItems = data;
-      this.cartProductCount=this.cartItems.length;
+      this.cartProductCount=this.cartService.getCount();
     });
   }
 

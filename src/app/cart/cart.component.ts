@@ -11,7 +11,7 @@ export class CartComponent implements OnInit {
 
   
   public cartItems:any=[];
-  public  selectedCartItems:any;
+  public selectedCartItems:any;
 
   public totalAmount:number=0;
   public priceChanged:boolean=false;
@@ -23,19 +23,21 @@ export class CartComponent implements OnInit {
     this.cartService.getProducts().subscribe(data => {
       this.cartItems = data;
       this.selectedCartItems=this.cartItems;
-      console.log("hola",this.cartItems)
+      console.log("standard",this.cartService.cartProductCount);
       this.total()
-
+      
     });
-  }
 
+  }
+  
+ 
 
   public removeItem(productId:any,productPrice:any){
-    this.priceChanged=true;
-    console.log("inside removeitem",this.priceChanged)
+
+    this.cartService.decreaseCount();
+    this.cartService.getCount();
     this.itemPrice= this.cartService.removeItem(productId)
     this.totalAmount-=this.itemPrice;
-    console.log("a thong",this.itemPrice);
 
 
   }
@@ -43,17 +45,10 @@ export class CartComponent implements OnInit {
 
   public total(){
     this.cartItems.map((item: { price: number; }) => {
-      console.log("initial",this.totalAmount)
-      console.log("item price",item.price)
       this.totalAmount += item.price;
-      console.log("what is tota;",this.totalAmount)
-
-     
     });
     
     if(this.priceChanged===true){
-      console.log("inside total true",this.priceChanged)
-      console.log("va",this.itemPrice)
       this.totalAmount=this.totalAmount-this.itemPrice;
       this.priceChanged=false;
 
@@ -62,7 +57,7 @@ export class CartComponent implements OnInit {
 
   public emptyCart(): void {
     this.cartService.emptyCart();
-    this.totalAmount=0;
+
   }
 
   public redirect(){

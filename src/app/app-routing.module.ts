@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { ViewcartComponent } from './viewcart/viewcart.component';
 import { MyordersComponent } from './myorders/myorders.component';
 import { DescriptionComponent } from './description/description.component';
+import { EditItemsComponent } from './edit-items/edit-items.component';
 
 const routes: Routes = [
   {path:'products',component:ProductListComponent },
@@ -17,8 +18,10 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'addproducts',component:AddProductsComponent},
   {path:'viewcart',component:ViewcartComponent},
-  {path:'myorders',component:MyordersComponent},
-  {path:'description/:id',component:DescriptionComponent}
+  {path:'myorders/:email',component:MyordersComponent},
+  {path:'description/:id',component:DescriptionComponent},
+  {path:'edititems/:id',component:EditItemsComponent},
+
 
 
 ];

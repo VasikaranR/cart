@@ -45,15 +45,12 @@ export class ViewcartComponent implements OnInit {
   }
 
   public mapToMyOrders(){
-    this.cartlist.map((item:{email:string;})=>{
-      this
-    })
     
-
-    this.orderService.updateOrders(this.email);
+    let email=localStorage.getItem('email');
+    this.orderService.getMyOrders(email);
 
     this.toaster.success('order placed successfully','success');
-    this.router.navigate(['/myorders'])
+    this.router.navigate([`/myorders/`+email])
   }
 
   public removeItem(productId:any,productPrice:any){

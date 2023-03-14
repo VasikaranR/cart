@@ -33,7 +33,7 @@ export class RecommendComponent implements  OnInit{
         console.error(err);
       },
     })
-
+    // this.slideRecommend();
   }
 
   public suggestProduct(productId:any){
@@ -65,9 +65,15 @@ export class RecommendComponent implements  OnInit{
     const next = this.currentSlide + 1;
     console.log(next);
     this.currentSlide = next === this.recommendList.length ? 0 : next;
-    console.log("next clicked, new current slide is: ", this.currentSlide);
     
   }
+
+   public slideRecommend(){
+    setInterval(()=>{
+      this.onNextClick()
+      },3000)
+
+   }
 
 
 }

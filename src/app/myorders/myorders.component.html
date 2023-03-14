@@ -4,7 +4,7 @@
 
     <div class="row product-list" style="margin: 1em 0;">
 
-      <div class="col-sm-12 col-md-6 col-lg-4 product-list__item" *ngFor="let product of products; let i = index;">
+      <div class="col-sm-12 col-md-6 col-lg-4 product-list__item" *ngFor="let product of productsList; let i = index;">
         <div class="card mb-4 shadow-sm pd-5">
           <div class="product-list__image">
            <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
@@ -12,11 +12,17 @@
 
           <div class="card-body">
             <h4>{{product.name}}</h4>
+
             <p class="card-text">{{product.description}}</p>
+            <p class="card-text">ORDER ID : {{product.orderId }}</p>
+            <p class="cart-text">Placed At :{{product.date}}</p>
+            <p class="cart-text">Time :{{product.time}}</p>
+            <p class="cart-text">Price :{{product.price | currency:'INR'}}</p> 
             <div class="text-center">
             </div>
           </div>
         </div>
+
       </div>
 
     </div>

@@ -21,6 +21,7 @@ constructor(private fb:FormBuilder, private productService:ProductService, priva
       name: new FormControl('',Validators.required),
       price: new FormControl('',Validators.required),
       image: new FormControl('',Validators.required),
+      category: new FormControl('',Validators.required),
       description: new FormControl('', Validators.required),
     })
     

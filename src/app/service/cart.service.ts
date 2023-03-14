@@ -5,13 +5,17 @@ import { Observable,Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class CartService implements OnInit{
-  productPrize:number=0;
-  cartId:any=[]
-  items:any=[]
+  public productPrize:number=0;
+  public cartId:any=[]
+  public items:any=[]
+
+  public cartProductCount:number=0;  
+
   
   constructor() { }
   ngOnInit(): void {
     console.log("ithaan",this.cartId);  
+    this.getCount();
   }
 
   public cartItems:any = [];
@@ -28,10 +32,8 @@ export class CartService implements OnInit{
     return this.products.asObservable();
   }
 
-  public addProductToCart(product:any,cartlistId:any){
+  public addProductToCart(product:any,cartlistId?:any){
     this.cartId.push(cartlistId);
-
-    console.log("let me",this.cartId)
     this.cartItems.push(product);
     this.products.next(this.cartItems);
     this.selectedItems=this.cartItems;
@@ -40,23 +42,24 @@ export class CartService implements OnInit{
     return this.cartItems
   }
 
-
-
-  public getTotalItems(){
-     return this.cartItems.length
-  }
-
   public emptyCart(){
     this.cartItems.length = 0;
+    this.cartProductCount=0;
     this.products.next(this.cartItems);
   }
 
+  public decreaseItemCount(){
+    this.cartProductCount--;
+    console.log("ivolo",this.cartProductCount)
+  }
+
+
   public removeItem(productId:any){
-    this.cartItems.map((item: any,index: any)=>{
+       this.decreaseCount();
+       this.cartItems.map((item: any,index: any)=>{
       if(item.id==productId){
        this.productPrize=item.price;
-       console.log()
-       this.cartItems.splice(index,1)
+       this.cartItems.splice(index,1);
       }
     })
     return  this.productPrize;
@@ -65,7 +68,6 @@ export class CartService implements OnInit{
 
 
   public addToCart(productId:any) {
-   console.log("ithu product ID",productId)
     this.getProducts().subscribe({
       next:(data)=>{
         this.cartId=productId;
@@ -78,11 +80,16 @@ export class CartService implements OnInit{
      })
   }
 
-  public addToMyOrders(){
-    this.getProducts().subscribe({
-    })
-
+  public getCount(){  
+    console.log("count",this.cartProductCount)
+    return this.cartProductCount;
   }
+
+  public decreaseCount(){
+    this.cartProductCount--;
+  }
+
+   
  
  
 

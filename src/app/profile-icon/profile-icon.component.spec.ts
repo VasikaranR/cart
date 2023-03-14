@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ProfileIconComponent } from './profile-icon.component';
 
@@ -8,7 +10,9 @@ describe('ProfileIconComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfileIconComponent ]
+      declarations: [ ProfileIconComponent ],
+      imports:[HttpClientTestingModule,RouterTestingModule]
+
     })
     .compileComponents();
 
@@ -20,4 +24,18 @@ describe('ProfileIconComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('call oninit',()=>{
+    const callNgOnit=spyOn(component,'ngOnInit').and.callThrough();
+    component.ngOnInit();
+    expect(callNgOnit).toHaveBeenCalled()
+  });
+
+
+  it('call logout',()=>{
+    const callLogout=spyOn(component,'logout').and.callThrough();
+    component.logout();
+    expect(callLogout).toHaveBeenCalled();
+  })
+
 });

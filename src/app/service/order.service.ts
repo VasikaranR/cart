@@ -16,13 +16,12 @@ export class OrderService {
 
   }
 
-  public getMyOrders(){
-    return this.http.get(environment.ORDERURL)
+  public getMyOrders(email:any){
+    console.log("da email", email)
+    return this.http.get(environment.ORDERURL+`?email=${email}`)
   }
 
-  public updateOrders(email:any){
-    return this.http.put(`${environment.BASEURL}?name`,email)
-  }
+  
 
 
 }

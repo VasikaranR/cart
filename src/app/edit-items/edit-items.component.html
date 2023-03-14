@@ -1,0 +1,61 @@
+<h3 class="bg-secondary d-flex justify-content-center">EDIT ITEMS</h3>
+
+<div class="d-flex justify-content-center p-5 m-5 border border-dark" style="background-color: #F9F9F9;">
+    <div class="p-4 bg bg-color-primary">
+        <table class="p-4" style="background-color:#F1F1F1" *ngFor="let item of product ">
+            <tr>
+                 <td>
+                    <div >
+                    <label >PRODUCT ID</label><br>
+                    <span>{{item.id }}</span>
+                  </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <div class="col-sm-12">
+                    <label>PRODUCT NAME</label><br>
+                    <span>{{title }}</span>
+                  </div>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                  <div class="col-lg-6">
+                <label>PRODUCT DESCRIPTION</label><br>
+                 {{description}}
+                </div>
+                </td>
+             </tr>
+              <tr>
+                <td>
+                <label>PRODUCT PRICE</label>
+                 <div>{{price | currency:'INR'}}</div>
+                </td>
+              </tr>
+              <img [src]="item.image" width="800px" height="550px">
+        </table>
+    </div>
+<div class="col-4 m-4 p-5 border border-dark" style="background-color: #FFFFFF;">
+   
+    <form [formGroup]="editForm" class="p-3" *ngFor="let data of product">
+        <div class="form-group" >
+            <label class="col-sm-12"> PRODUCT NAME</label>
+            <input type="text" class="form-control" formControlName="productName" [(ngModel)]="title">
+            <br>
+        </div>
+        <br>
+        <div class="form-group">
+            <label class="col-sm-12"> PRODUCT DESCRIPTION</label>
+            <textarea name="" class="form-control" id="" cols="30" rows="10" formControlName="productDescription" [(ngModel)]="description" ></textarea>
+        </div> 
+        <br>
+        <div class="form-group">
+            <label class="col-sm-12">PRODUCT PRICE</label>
+            <input  type="text" class="form-control" formControlName="productPrice" [(ngModel)]="price"  [(ngModel)]="price" ><br>
+        </div>
+       
+    </form>
+    <button type="submit" class="btn btn-primary m-5 col-lg-6 p-2" (click)="onButtonClick()">Save changes</button>
+</div>
+</div>

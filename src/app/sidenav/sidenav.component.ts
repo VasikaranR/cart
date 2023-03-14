@@ -10,6 +10,8 @@ export class SidenavComponent implements OnInit {
 
   @Input() public sidebarShow: boolean = false;
 
+  email:any=localStorage.getItem('email');
+
   constructor(private router:Router) { }
 
   public role:any=localStorage.getItem('role');
@@ -30,28 +32,7 @@ export class SidenavComponent implements OnInit {
     },
     {
       text:'My orders',
-      url:'myorders',
-      role:'user'
-    },
-    {
-     text:'support ',
-     role:'user'
- 
-    },
-    {
-      text:'help',
-      role:'user'
-
-    },
-    {
-      text:'login',
-      url:'login',
-      role:'user'
-
-    },
-    {
-      text:'sign-up',
-      url:'register',
+      url:'myorders/'+this.email,
       role:'user'
     }
   ]
